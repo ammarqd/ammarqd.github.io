@@ -1,0 +1,130 @@
+body, p, a, ul, li, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --header-text: #333;
+    --body-text: #333;
+    --body-color: #ccc;
+    --bg-color: #fff;
+}
+
+body {
+    font-family: "Share Tech Mono";
+    background: rgb(240, 255, 255);
+}
+
+#main-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    line-height: 2.0;
+    font-size: 1rem;
+}
+  
+a {
+    color: #333;
+    text-decoration: none;
+}
+  
+h1 {
+    font-size: 2rem;
+}
+  
+h1 a {
+    color: #333;
+}
+
+h1 a:hover {
+    color: #666;
+}
+
+header {
+    width: 97%;
+    padding: 1.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+}
+
+nav a {
+    color: #333;
+    font-size: 1.25rem;
+}
+
+nav a:hover {
+    color: #666;
+}
+
+.typewriter h2 {
+    color: #333;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+#album-container img:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+main {
+    width: 66%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main img {
+    height: 400px;
+    width: 400px;
+    border-radius: 12px;
+}
+
+section {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+
+section a {
+    fill: #333;
+}
+
+section a:hover {
+    fill: #666;
+}
+
+footer {
+    height: 5rem;
+    padding: 0 1.2rem;
+}
+
+footer p {
+    font-size: 1.5rem;
+}
+
+
