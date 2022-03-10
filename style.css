@@ -54,8 +54,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
-    width: 15%;
+    gap: 2rem;
 }
 
 nav a {
@@ -90,7 +89,6 @@ nav a:hover {
 }
 
 main {
-    width: 66%;
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -105,9 +103,9 @@ main img {
 }
 
 section {
-    width: 45%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 12rem;
 }
 
 section a {
@@ -126,5 +124,3 @@ footer {
 footer p {
     font-size: 1.5rem;
 }
-
-
