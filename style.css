@@ -65,6 +65,7 @@ nav a:hover {
 }
 
 .typewriter h2 {
+    font-size: 1.5rem;
     color: #333;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     white-space: nowrap; /* Keeps the content on a single line */
