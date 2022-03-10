@@ -11,15 +11,13 @@ body, p, a, ul, li, h1 {
 }
 
 body {
+    color: #333;
     font-family: "Share Tech Mono";
     background: rgb(240, 255, 255);
 }
 
 #main-wrapper {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 p {
@@ -28,7 +26,6 @@ p {
 }
   
 a {
-    color: #333;
     text-decoration: none;
 }
   
@@ -71,7 +68,7 @@ nav a:hover {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
+    letter-spacing: .15rem; /* Adjust as needed */
     animation: 
         typing 3.5s steps(40, end),
         blink-caret .75s step-end infinite;
@@ -83,11 +80,6 @@ nav a:hover {
     to { width: 100% }
 }
 
-#album-container img:hover {
-    opacity: 0.8;
-    filter: alpha(opacity=80);
-}
-
 main {
     height: 80vh;
     display: flex;
@@ -97,15 +89,15 @@ main {
 }
 
 main img {
-    height: 400px;
-    width: 400px;
+    height: 25rem;
+    width: 25rem;
     border-radius: 12px;
 }
 
 section {
     display: flex;
     justify-content: center;
-    gap: 12rem;
+    gap: 12vw;
 }
 
 section a {
@@ -114,13 +106,4 @@ section a {
 
 section a:hover {
     fill: #666;
-}
-
-footer {
-    height: 5rem;
-    padding: 0 1.2rem;
-}
-
-footer p {
-    font-size: 1.5rem;
 }
