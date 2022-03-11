@@ -1,13 +1,8 @@
 body, p, a, ul, li, h1 {
     margin: 0;
     padding: 0;
-}
-
-:root {
-    --header-text: #333;
-    --body-text: #333;
-    --body-color: #ccc;
-    --bg-color: #fff;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 body {
@@ -22,13 +17,8 @@ body {
 
 p {
     line-height: 2.0;
-    font-size: 1rem;
 }
-  
-a {
-    text-decoration: none;
-}
-  
+
 h1 {
     font-size: 2rem;
 }
@@ -93,13 +83,13 @@ main {
 main img {
     height: 25rem;
     width: 25rem;
-    border-radius: 12px;
+    border-radius: 1rem;
 }
 
 section {
     display: flex;
     justify-content: center;
-    gap: 14rem;
+    gap: 12vw;
 }
 
 section a {
