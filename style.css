@@ -3,6 +3,7 @@ body, p, a, ul, li, h1 {
     padding: 0;
     text-decoration: none;
     list-style-type: none;
+    box-sizing: border-box;
 }
 
 body {
@@ -23,6 +24,7 @@ a {
 }
 
 p {
+    font-size: 1.2rem;
     line-height: 2.0;
 }
 
@@ -42,6 +44,12 @@ section {
 nav {
     width: 40vw;
     height: 15vh;
+}
+
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
 }
 
 nav ul {
@@ -64,3 +72,20 @@ h2 {
     letter-spacing: .15rem;
     font-size: 1.6em;
 }
+
+.container {
+    width: 100%; /* Full width */
+    background-color: #ddd; /* Grey background */
+  }
+  
+  .skills {
+    text-align: right; /* Right-align text */
+    padding-top: 10px; /* Add top padding */
+    padding-bottom: 10px; /* Add bottom padding */
+    color: white; /* White text color */
+  }
+  
+  #html {width: 90%; background-color: #04AA6D;} /* Green */
+  #css {width: 80%; background-color: #2196F3;} /* Blue */
+  #js {width: 65%; background-color: #f44336;} /* Red */
+  #php {width: 60%; background-color: #808080;} /* Dark Grey */
