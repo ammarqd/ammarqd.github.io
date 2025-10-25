@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Orb animation */
+.orb {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 0;
+  height: 0;
+  transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orb::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: -9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.6) 40%,
+    rgba(255, 255, 255, 0.25) 70%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  box-shadow:
+    0 0 6px rgba(255, 255, 255, 0.6),
+    0 0 14px rgba(255, 255, 255, 0.25);
+  transform-origin: 10px 10px;
+  animation: orbitGlow 7s linear infinite;
+}
+
+@keyframes orbitGlow {
+  0% {
+    transform: rotate(0deg) translateX(4px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(4px) rotate(-360deg);
+  }
+}
