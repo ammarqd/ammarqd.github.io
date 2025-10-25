@@ -6,7 +6,7 @@ interface NavItem {
   id: string
 }
 
-export default function Sidebar() {
+export default function Header() {
   const navRef = useRef<HTMLElement>(null)
   const orbRef = useRef<HTMLDivElement>(null)
   const [activeSection, setActiveSection] = useState<string>('about')
@@ -75,7 +75,7 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="w-[25vw] px-12 pt-[7%] fixed h-screen flex flex-col items-center gap-16">
+    <header className="lg:sticky lg:top-0 lg:w-[25%] lg:max-h-screen px-12 pt-[7%] flex flex-col items-center gap-16">
       <div className="flex flex-col gap-2 items-start w-full">
         <h1 className="text-[#ddd] text-[2.5rem] font-semibold tracking-wide">
           Ammar Qadir
@@ -115,6 +115,6 @@ export default function Sidebar() {
           })}
         </ul>
       </nav>
-    </aside>
+    </header>
   )
 }

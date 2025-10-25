@@ -1,5 +1,5 @@
 import { Fira_Sans } from 'next/font/google'
-import Sidebar from '@/components/Sidebar'
+import Header from '@/components/Header'
 import './globals.css'
 
 const fira_sans = Fira_Sans({
@@ -19,10 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${fira_sans.className} bg-[#111] text-[#999]`}>
-        <div>
-          <Sidebar />
-          <main className="w-3/4 ml-[25%] py-[7%] px-[15%] flex flex-col justify-center gap-20">
+      <body className={`${fira_sans.className} bg-[#111] text-neutral-400`}>
+        <div className="lg:flex lg:justify-between lg:gap-4">
+          <Header />
+          <main className="lg:w-[75%] py-[7%] px-[15%] flex flex-col justify-center gap-10">
             {children}
           </main>
         </div>
