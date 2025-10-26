@@ -75,7 +75,7 @@ export default function Header() {
   }
 
   return (
-    <header className="lg:sticky lg:top-0 lg:w-[25%] lg:max-h-screen px-12 pt-[7%] flex flex-col items-center gap-16">
+    <header className="lg:sticky lg:top-0 lg:w-[35%] lg:max-h-screen px-24 pt-[7%] flex flex-col gap-16">
       <div className="flex flex-col gap-2 items-start w-full">
         <h1 className="text-[#ddd] text-[2.5rem] font-semibold tracking-wide">
           Ammar Qadir
@@ -101,13 +101,10 @@ export default function Header() {
                   data-section={item.id}
                   onClick={(e) => handleClick(e, item.id)}
                   onMouseEnter={() => setHoveredSection(item.id)}
-                  className={`pb-[0.2em] relative text-[0.8em] uppercase tracking-[3px] font-medium no-underline cursor-pointer transition-colors duration-300 ${
+                  className={`pb-[0.2em] relative text-[0.8em] uppercase tracking-[3px] font-medium transition-colors duration-300 ${
                     isActive ? 'text-[#aaa]' : 'text-[#999]'
                   }`}
                 >
-                  <span className={`absolute top-1/2 -left-40 h-px w-[140px] transition-colors duration-500 ${
-                    isActive ? 'bg-[#666]' : 'bg-[#333]'
-                  }`}></span>
                   {item.name}
                 </a>
               </li>

@@ -20,9 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fira_sans.className} bg-[#111] text-neutral-400`}>
-        <div className="lg:flex lg:justify-between lg:gap-4">
+        <div className="lg:flex lg:justify-apart lg:gap-4 px-12">
           <Header />
-          <main className="lg:w-[75%] py-[7%] px-[15%] flex flex-col justify-center gap-10">
+          <main className="lg:w-[55%] py-[7%] px-[5%] flex flex-col justify-center gap-10">
             {children}
           </main>
         </div>

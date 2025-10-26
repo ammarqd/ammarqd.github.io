@@ -15,8 +15,8 @@
 .orb::before {
   content: "";
   position: absolute;
-  top: -9px;
-  left: -9px;
+  top: -12px;
+  left: -12px;
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -31,7 +31,7 @@
     0 0 6px rgba(255, 255, 255, 0.6),
     0 0 14px rgba(255, 255, 255, 0.25);
   transform-origin: 10px 10px;
-  animation: orbitGlow 7s linear infinite;
+  animation: orbitGlow 3s linear infinite;
 }
 
 @keyframes orbitGlow {
