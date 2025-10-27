@@ -8,13 +8,29 @@ export interface AboutData {
   description: string[]
 }
 
+export interface Experience {
+  position: string
+  company: string
+  duration: string
+  description: string
+}
+
+export const experiences: Experience[] = [
+  {
+    position: "Senior Software Engineer",
+    company: "Company Name",
+    duration: "2023 - Present",
+    description: "Led development of key features and mentored junior developers."
+  },
+]
+
 export const aboutData : AboutData = {
   description: [
-"I'm a Software Developer & Engineer with a curiosity for how things work. I specialise in building and integrating backend APIs, but I've also created dynamic frontends, a character-driven Unity game, an AI image classifier, and other projects that push my skills and creativity.",
-"I thrive on solving complex technical challenges while keeping design and user experience in mind. I enjoy combining aesthetics, interactivity, and efficient code, from data structures and algorithms to intuitive UI/UX. Being involved in all parts of the development process is what excites me most.",
-"Outside of programming, I love reading, gaming, and have recently been trying my hand at bouldering. I’m also fascinated by history and have an occasional (frequent ◑.◑) sweet tooth."
+  "I'm a Software Developer & Engineer driven by curiosity and a love for building things that work beautifully. I specialise in backend development and API integration, but I've also built interactive frontends, a character-driven Unity game, an AI image classifier, and other projects that keep me learning and experimenting.",
+  "I enjoy tackling complex technical problems and finding elegant, user-focused solutions. Whether I'm refining algorithms, designing data structures, or shaping a smooth UI/UX, I aim to blend creativity with clean, efficient code. Being part of every step—from concept to deployment—is what keeps me motivated.",
+  "Outside of programming, I love reading, gaming, and have recently been trying my hand at bouldering. I'm also fascinated by history and have an occasional (frequent ◑.◑) sweet tooth."
+]
 
-  ]
 }
 
 export const projects: Project[] = [
