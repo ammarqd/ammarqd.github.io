@@ -6,7 +6,7 @@ interface NavItem {
   id: string
 }
 
-export default function Header() {
+export default function Nav() {
   const navRef = useRef<HTMLElement>(null)
   const orbRef = useRef<HTMLDivElement>(null)
   const [activeSection, setActiveSection] = useState<string>('about')
