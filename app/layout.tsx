@@ -33,7 +33,7 @@ export default function RootLayout({
               </div>
               <Nav />
             </header>
-          <main className="lg:w-[52%] py-24 flex flex-col justify-center gap-10">
+          <main className="lg:w-[52%] py-24 flex flex-col justify-center gap-30">
             {children}
           </main>
           </div>

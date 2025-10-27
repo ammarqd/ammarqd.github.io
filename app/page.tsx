@@ -10,6 +10,22 @@ export default function Home() {
           <p key={index} className="leading-[2.0]">{paragraph}</p>
         ))}
       </section>
+
+      <section id="experience" className="flex flex-col gap-8">
+        {experiences.map((exp: Experience, index: number) => (
+          <article key={index} className="grid grid-cols-[120px_1fr] gap-4">
+            <div className="text-xs uppercase tracking-wider text-[#666] pt-1">
+              {exp.duration}
+            </div>
+            <div className="flex flex-col gap-3">
+              <h3 className="text-neutral-300 text-md font-semibold">
+                {exp.position} · {exp.company}
+              </h3>
+              <p className="leading-[2.0] text-sm">{exp.description}</p>
+            </div>
+          </article>
+        ))}
+      </section>
      
       <section id="projects" className="flex flex-col gap-4">
         {projects.map((project: Project, index: number) => (
