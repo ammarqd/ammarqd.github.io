@@ -53,6 +53,7 @@ export default function Nav() {
     }
 
     const observer = new IntersectionObserver(observerCallback, observerOptions)
+
     navItems.forEach((item) => {
       const section = document.getElementById(item.id)
       if (section) observer.observe(section)
@@ -67,7 +68,6 @@ export default function Nav() {
       const scrollPosition = window.scrollY + window.innerHeight
       const pageHeight = document.documentElement.scrollHeight
 
-      // If at bottom of page, highlight "contact"
       if (scrollPosition >= pageHeight - 5) {
         setActiveSection('contact')
       }
@@ -80,7 +80,6 @@ export default function Nav() {
   // Handle nav clicks
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault()
-
     if (sectionId === 'about') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
       return
@@ -93,7 +92,7 @@ export default function Nav() {
   }
 
   return (
-    <nav ref={navRef} onMouseLeave={() => setHoveredSection(null)} className="relative">
+    <nav ref={navRef} onMouseLeave={() => setHoveredSection(null)} className="relative hidden lg:block">
       <div className="orb" ref={orbRef} style={orbStyle}></div>
       <ul className="flex flex-col gap-6">
         {navItems.map((item) => {
