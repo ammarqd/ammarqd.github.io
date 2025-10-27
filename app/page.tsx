@@ -65,20 +65,19 @@ export default function Home() {
         ))}
       </section>
      
-<section id="contact" className="flex flex-col gap-6 mt-20 border-t border-neutral-800 pt-10">
-  <p className="text-sm text-neutral-400 leading-[2.0] max-w-md">
-    I'm always open to interesting projects, collaboration, or just a quick chat. 
-    Reach out with any questions or ideas via{' '}
-    <a
-      href="mailto:ammarqd@outlook.com"
-      className="text-white no-underline border-b border-transparent hover:border-white transition-all duration-200"
-    >
-      email
-    </a>
-    .
-  </p>
-</section>
-
+      <section id="contact" className="flex flex-col gap-6 mt-20 border-t border-neutral-800 pt-10">
+        <p className="text-sm text-neutral-400 leading-[2.0] max-w-md">
+          I'm always open to interesting projects, collaboration, or just a quick chat. 
+          Reach out with any questions or ideas via{' '}
+          <a
+            href="mailto:ammarqd@outlook.com"
+            className="text-white no-underline border-b border-transparent hover:border-white transition-all duration-200"
+          >
+            email
+          </a>
+          .
+        </p>
+      </section>
     </>
   )
 }
