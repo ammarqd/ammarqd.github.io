@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fira_sans.className} bg-[#111] text-neutral-400`}>
-        <div className="mx-auto min-h-screen max-w-screen-xl px-8 md:px-16 lg:py-0">
+        <div className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-16 lg:py-0">
           <div className="lg:flex lg:gap-4">
             <header className="lg:sticky lg:top-0 py-10 lg:py-24 lg:w-[38%] lg:max-h-screen flex flex-col gap-16">
               <div className="flex flex-col gap-2 items-start w-full">

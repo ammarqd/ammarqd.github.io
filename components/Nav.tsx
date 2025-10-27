@@ -81,7 +81,7 @@ export default function Header() {
       className="relative"
     >
       <div className="orb" ref={orbRef} style={orbStyle}></div>
-      <ul className="flex flex-col gap-7">
+      <ul className="flex flex-col gap-6">
         {navItems.map(item => {
           const isActive = hoveredSection ? hoveredSection === item.id : activeSection === item.id
           return (
@@ -92,7 +92,7 @@ export default function Header() {
                 onClick={(e) => handleClick(e, item.id)}
                 onMouseEnter={() => setHoveredSection(item.id)}
                 className={`pb-[0.2em] relative text-[0.8em] uppercase tracking-[3px] font-medium transition-colors duration-300 ${
-                  isActive ? 'text-[#aaa]' : 'text-[#999]'
+                  isActive ? 'text-[#ccc]' : 'text-[#999]'
                 }`}
               >
                 {item.name}
