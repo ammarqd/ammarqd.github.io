@@ -46,15 +46,15 @@ export const projects: Project[] = [
   {
     title: "Cool Compiler",
     url: "https://github.com/ammarqd/cool-compiler",
-    image: "/images/CoolCompiler.png",
+    image: "/images/cool-compiler.png",
     description:
       "A compiler for the Cool programming language, consisting of lexer, parser, and backend code generation. Coded in Java utilising the visitor design pattern, with full test coverage for each component.",
     technologies: ["Java", "ANTLR4"]
   },
   {
     title: "PRISM App",
-    url: "https://github.com/ammarqd/Github-stats-app",
-    image: "/images/PrismApp.png",
+    url: "https://github.com/ammarqd/github-stats-app",
+    image: "/images/prism-app.png",
     description:
       "A web app that lets users upload and enhance images with a wide variety of filters. Features a clean and intuitive interface, with the ability to save, manage, and enjoy edited images.",
     technologies: ["React", "TailwindCSS", "Express", "PostgreSQL"]
@@ -62,7 +62,7 @@ export const projects: Project[] = [
   {
     title: "CIFAR-10 Image Classifier",
     url: "https://github.com/ammarqd/deep-learning-image-classifier",
-    image: "/images/ImageClassifier.jpg",
+    image: "/images/nndl-classifier.jpg",
     description:
       "An image classifier with a custom architecture, utilising knowledge learnt from a Neural Networks & Deep Learning module. Attained 91% accuracy on the CIFAR-10 dataset.",
     technologies: ["Python", "PyTorch", "Pandas"]
@@ -70,7 +70,7 @@ export const projects: Project[] = [
   {
     title: "Image Processing Application",
     url: "https://github.com/ammarqd/image-processing-application",
-    image: "/images/ImageProcessingApp.jpg",
+    image: "/images/image-processing-app.jpg",
     description:
       "An Image processing application for processing a single image with filters or filtering between two images. Also includes the ability to select a Region of Interest (ROI) and apply multiple filters onto a single image.",
     technologies: ["Java", "Swing"]
@@ -78,7 +78,7 @@ export const projects: Project[] = [
   {
     title: "Never Upon a Time",
     url: "https://ammarqd.github.io/never-upon-a-time-build/build/index.html",
-    image: "/images/NeverUponaTime.jpg",
+    image: "/images/never-upon-a-time.jpg",
     description:
       "Follow the protagonist through a surreal realm inspired by Alice in Wonderland, navigating Victorian streets, opulent mansions, and bizarre spaces in search of a lost cat named Seren.",
     technologies: ["C#", "Unity Engine", "Blender"]
@@ -86,7 +86,7 @@ export const projects: Project[] = [
   {
     title: "Weather App",
     url: "https://github.com/ammarqd/Weather-app-gui",
-    image: "/images/WeatherApp.jpg",
+    image: "/images/weather-app.jpg",
     description:
       "A weather app coded in React with a stylish GUI and weather information obtained through an API. Designed for tourists it has clothing and accessory recommendations based on the weather.",
     technologies: ["HTML", "CSS", "JavaScript", "React"]
