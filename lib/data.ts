@@ -15,21 +15,13 @@ export interface Experience {
   description: string
 }
 
-export const experiences: Experience[] = [
-  {
-    position: "Senior Software Engineer",
-    company: "Company Name",
-    duration: "2023 - Present",
-    description: "Led development of key features and mentored junior developers."
-  },
+export const aboutData : AboutData = {
+ description: [
+  "I'm a developer driven by curiosity and a love for building things that work beautifully. I specialise in backend development and API integration, but I've also built dynamic frontends, a character-driven Unity game, an AI image classifier, and other projects push my skills and creativity.",
+  "I enjoy tackling complex technical problems and finding elegant, user-focused solutions. Whether I'm refining code architecture, choosing the right algorithm or data structure, or shaping a smooth UI/UX, I love being involved in the whole process—seeing ideas take shape and grow into something real.",
+  "Outside of programming, I love reading and gaming, and have recently been trying my hand at bouldering. I'm also fascinated by history, and have an occasional (frequent ◑.◑) sweet tooth."
 ]
 
-export const aboutData : AboutData = {
-  description: [
-  "I'm a Software Developer & Engineer driven by curiosity and a love for building things that work beautifully. I specialise in backend development and API integration, but I've also built interactive frontends, a character-driven Unity game, an AI image classifier, and other projects that keep me learning and experimenting.",
-  "I enjoy tackling complex technical problems and finding elegant, user-focused solutions. Whether I'm refining algorithms, designing data structures, or shaping a smooth UI/UX, I aim to blend creativity with clean, efficient code. Being part of every step—from concept to deployment—is what keeps me motivated.",
-  "Outside of programming, I love reading, gaming, and have recently been trying my hand at bouldering. I'm also fascinated by history and have an occasional (frequent ◑.◑) sweet tooth."
-]
 
 }
 

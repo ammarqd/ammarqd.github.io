@@ -11,22 +11,6 @@ export default function Home() {
         ))}
       </section>
      
-      <section id="experience" className="flex flex-col gap-4">
-        {experiences.map((exp: Experience, index: number) => (
-          <article key={index} className="flex flex-col gap-3">
-            <div className="flex flex-col gap-1">
-              <h2 className="text-white text-base font-semibold">
-                {exp.position}
-              </h2>
-              <p className="text-[#999] text-sm">
-                {exp.company} · {exp.duration}
-              </p>
-            </div>
-            <p className="leading-[2.0]">{exp.description}</p>
-          </article>
-        ))}
-      </section>
-     
       <section id="projects" className="flex flex-col gap-4">
         {projects.map((project: Project, index: number) => (
           <article key={index} className="flex flex-col gap-3">
