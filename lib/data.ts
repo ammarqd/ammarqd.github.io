@@ -35,7 +35,7 @@ export const experiences: Experience[] = [
   },
   {
     position: "Private Tutor",
-    company: "Modern Tuition / Self-Employed",
+    company: "Modern Tuition / Freelance",
     duration: "2021 — 2025",
     description:
       "Taught secondary school students and students taking the 11+ exam. Tailored Maths and Science tutoring to meet individual learning needs, in both in-person and online environments."
