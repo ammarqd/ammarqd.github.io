@@ -1,4 +1,5 @@
-'use client'
+"use client"
+
 import { useState, useEffect, useRef } from 'react'
 
 interface NavItem {
@@ -9,6 +10,10 @@ interface NavItem {
 export default function Nav() {
   const navRef = useRef<HTMLElement>(null)
   const orbRef = useRef<HTMLDivElement>(null)
+  const orbDotRef = useRef<HTMLDivElement>(null)
+  const animationFrameRef = useRef<number | null>(null)
+  const startTimeRef = useRef<number>(Date.now())
+  
   const [activeSection, setActiveSection] = useState<string>('about')
   const [hoveredSection, setHoveredSection] = useState<string | null>(null)
   const [orbStyle, setOrbStyle] = useState<{ transform: string }>({ transform: 'translate(0px, 0px)' })
@@ -20,7 +25,37 @@ export default function Nav() {
     { name: 'contact', id: 'contact' }
   ]
 
-  // Orb movement logic
+  // Infinity loop animation
+  useEffect(() => {
+    const a = 10 // width
+    const b = 6 // height
+    const speed = 3500 // milliseconds
+
+    const animate = () => {
+      if (!orbDotRef.current) return
+      
+      const elapsed = Date.now() - startTimeRef.current
+      const t = (elapsed % speed) / speed * Math.PI * 2
+      
+      // Lemniscate of Gerono (figure-8 curve)
+      const x = a * Math.cos(t)
+      const y = b * Math.sin(t) * Math.cos(t)
+      
+      orbDotRef.current.style.transform = `translate(${x}px, ${y}px)`
+      
+      animationFrameRef.current = requestAnimationFrame(animate)
+    }
+
+    animate()
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current)
+      }
+    }
+  }, [])
+
+  // Orb movement logic between nav items
   useEffect(() => {
     const targetSection = hoveredSection || activeSection
     const targetLink = navRef.current?.querySelector<HTMLAnchorElement>(`[data-section="${targetSection}"]`)
@@ -29,8 +64,8 @@ export default function Nav() {
     if (targetLink && orb && navRef.current) {
       const linkRect = targetLink.getBoundingClientRect()
       const navRect = navRef.current.getBoundingClientRect()
-      const x = linkRect.left - navRect.left
-      const y = linkRect.top - navRect.top - 10
+      const x = linkRect.left - navRect.left - 12
+      const y = linkRect.top - navRect.top + 8
 
       setOrbStyle({ transform: `translate(${x}px, ${y}px)` })
     }
@@ -67,7 +102,6 @@ export default function Nav() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight
       const pageHeight = document.documentElement.scrollHeight
-
       if (scrollPosition >= pageHeight - 5) {
         setActiveSection('contact')
       }
@@ -93,7 +127,9 @@ export default function Nav() {
 
   return (
     <nav ref={navRef} onMouseLeave={() => setHoveredSection(null)} className="relative hidden lg:block">
-      <div className="orb" ref={orbRef} style={orbStyle}></div>
+      <div className="orb" ref={orbRef} style={orbStyle}>
+        <div className="orb-dot" ref={orbDotRef}></div>
+      </div>
       <ul className="flex flex-col gap-6">
         {navItems.map((item) => {
           const isActive = hoveredSection ? hoveredSection === item.id : activeSection === item.id

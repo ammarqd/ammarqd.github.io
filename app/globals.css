@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-/* Orb animation */
+/* Orb container - moves between nav items */
 .orb {
   position: absolute;
-  top: 15px;
+  top: -12px;
   left: 0;
   width: 0;
   height: 0;
@@ -12,11 +12,9 @@
   z-index: 1;
 }
 
-.orb::before {
-  content: "";
+/* Orb dot - animated in infinity loop via JavaScript */
+.orb-dot {
   position: absolute;
-  top: -12px;
-  left: -12px;
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -30,15 +28,5 @@
   box-shadow:
     0 0 6px rgba(255, 255, 255, 0.6),
     0 0 14px rgba(255, 255, 255, 0.25);
-  transform-origin: 10px 10px;
-  animation: orbitGlow 3s linear infinite;
-}
-
-@keyframes orbitGlow {
-  0% {
-    transform: rotate(0deg) translateX(4px) rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg) translateX(4px) rotate(-360deg);
-  }
+  /* Transform is handled by JavaScript */
 }

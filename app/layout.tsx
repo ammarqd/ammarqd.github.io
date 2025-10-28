@@ -21,15 +21,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${fira_sans.className} bg-[#111] text-neutral-400`}>
         <div className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-16 py-12 lg:py-0">
-          <div className="lg:flex lg:gap-4">
-            <header className="lg:sticky lg:top-0 lg:py-24 lg:w-[38%] lg:max-h-screen flex flex-col gap-16">
+          <div className="lg:flex">
+            <header className="lg:sticky lg:top-0 lg:py-24 lg:w-[40%] lg:max-h-screen flex flex-col gap-16">
               <div className="flex flex-col gap-2 items-start w-full">
                 <h1 className="text-[#ddd] text-[2.5rem] font-semibold tracking-wide">
                   Ammar Qadir
                 </h1>
-                <p className="text-[#999] text-xs uppercase tracking-[3px] font-medium m-0">
+                <h2 className="text-[#ccc] text-[0.9em] uppercase tracking-[3px] font-medium m-0">
                   Software Engineer
-                </p>
+                </h2>
               </div>
               <Nav />
             </header>
