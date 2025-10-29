@@ -19,7 +19,7 @@ export interface Experience {
 
 export const aboutData: AboutData = {
   description: [
-    "I'm a developer driven by curiosity and a love for building things that work beautifully. I specialise in backend development and API integration, but I've also built dynamic frontends, a character-driven Unity game, an AI image classifier, and other projects push my skills and creativity.",
+    "I'm a developer driven by curiosity and a love for building things that work beautifully. I specialise in backend development and API integration, but I've also built dynamic frontends, a character-driven Unity game, an AI image classifier, and other projects that push my skills and creativity.",
     "I enjoy tackling complex technical problems and finding elegant, user-focused solutions. Whether I'm refining code architecture, choosing the right algorithm or data structure, or shaping a smooth UI/UX, I love being involved in the whole process—seeing ideas take shape and grow into something real.",
     "In my spare time, I love reading and gaming, and have recently been trying my hand at bouldering. I'm also fascinated by history, and have an occasional (frequent ◑.◑) sweet tooth."
   ]
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     url: "https://github.com/ammarqd/image-processing-application",
     image: "/images/image-processing-app.jpg",
     description:
-      "An Image processing application for processing a single image with filters or filtering between two images. Also includes the ability to select a Region of Interest (ROI) and apply multiple filters onto a single image.",
+      "An Image processing application for processing a single image with filters or filtering between two images. Also includes the ability to click and drag a region to apply multiple filters onto a single image.",
     technologies: ["Java", "Swing"]
   },
   {
@@ -85,7 +85,7 @@ export const projects: Project[] = [
   },
   {
     title: "Weather App",
-    url: "https://github.com/ammarqd/Weather-app-gui",
+    url: "https://github.com/ammarqd/weather-app-gui",
     image: "/images/weather-app.jpg",
     description:
       "A weather app coded in React with a stylish GUI and weather information obtained through an API. Designed for tourists it has clothing and accessory recommendations based on the weather.",
