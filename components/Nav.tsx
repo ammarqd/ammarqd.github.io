@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from 'react'
+import { Github, Linkedin, Mail } from 'lucide-react'
 
 interface NavItem {
   name: string
@@ -27,9 +28,9 @@ export default function Nav() {
 
   // Infinity loop animation
   useEffect(() => {
-    const a = 10 // width
-    const b = 6 // height
-    const speed = 3500 // milliseconds
+    const a = 10
+    const b = 6
+    const speed = 3500
 
     const animate = () => {
       if (!orbDotRef.current) return
@@ -37,7 +38,6 @@ export default function Nav() {
       const elapsed = Date.now() - startTimeRef.current
       const t = (elapsed % speed) / speed * Math.PI * 2
       
-      // Lemniscate of Gerono (figure-8 curve)
       const x = a * Math.cos(t)
       const y = b * Math.sin(t) * Math.cos(t)
       
@@ -71,43 +71,47 @@ export default function Nav() {
     }
   }, [activeSection, hoveredSection])
 
-  // Intersection observer for section highlighting
-  useEffect(() => {
-    const observerOptions: IntersectionObserverInit = {
-      root: null,
-      rootMargin: '-50% 0px -50% 0px',
-      threshold: 0
-    }
-
-    const observerCallback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id)
-        }
-      })
-    }
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions)
-
-    navItems.forEach((item) => {
-      const section = document.getElementById(item.id)
-      if (section) observer.observe(section)
-    })
-
-    return () => observer.disconnect()
-  }, [])
-
-  // Detect scroll-to-bottom to activate contact
+  // Unified scroll handler for section detection
   useEffect(() => {
     const handleScroll = () => {
+      const viewportHeight = window.innerHeight
       const scrollPosition = window.scrollY + window.innerHeight
       const pageHeight = document.documentElement.scrollHeight
-      if (scrollPosition >= pageHeight - 5) {
+      const isAtBottom = scrollPosition >= pageHeight - 10
+      
+      if (isAtBottom) {
         setActiveSection('contact')
+        return
       }
+      
+      const sections = navItems.map(item => {
+        const element = document.getElementById(item.id)
+        if (!element) return null
+        
+        const rect = element.getBoundingClientRect()
+        
+        return {
+          id: item.id,
+          element,
+          rect,
+          distanceFromTop: rect.top
+        }
+      }).filter(Boolean) as Array<{ id: string; element: HTMLElement; rect: DOMRect; distanceFromTop: number }>
+
+      let currentSection = 'about'
+      
+      for (const section of sections) {
+        if (section.distanceFromTop <= viewportHeight * 0.3 && section.rect.bottom > 0) {
+          currentSection = section.id
+        }
+      }
+      
+      setActiveSection(currentSection)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -126,30 +130,61 @@ export default function Nav() {
   }
 
   return (
-    <nav ref={navRef} onMouseLeave={() => setHoveredSection(null)} className="relative hidden lg:block">
-      <div className="orb" ref={orbRef} style={orbStyle}>
-        <div className="orb-dot" ref={orbDotRef}></div>
+    <div className="flex flex-col justify-between h-full">
+      <nav ref={navRef} onMouseLeave={() => setHoveredSection(null)} className="relative hidden lg:block">
+        <div className="orb" ref={orbRef} style={orbStyle}>
+          <div className="orb-dot" ref={orbDotRef}></div>
+        </div>
+        <ul className="flex flex-col gap-6">
+          {navItems.map((item) => {
+            const isActive = hoveredSection ? hoveredSection === item.id : activeSection === item.id
+            return (
+              <li key={item.name}>
+                <a
+                  href={`#${item.id}`}
+                  data-section={item.id}
+                  onClick={(e) => handleClick(e, item.id)}
+                  onMouseEnter={() => setHoveredSection(item.id)}
+                  className={`pb-[0.2em] relative text-[0.8em] uppercase tracking-[3px] font-medium transition-colors duration-300 ${
+                    isActive ? 'text-[#ccc]' : 'text-[#999]'
+                  }`}
+                >
+                  {item.name}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
+
+      <div className="hidden lg:flex items-center gap-5">
+        <a
+          href="https://github.com/ammarqd"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
+          aria-label="GitHub"
+        >
+          <Github size={16} strokeWidth={1.5} />
+        </a>
+        <a
+          href="https://linkedin.com/in/ammarqadir"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
+          aria-label="LinkedIn"
+        >
+          <Linkedin size={16} strokeWidth={1.5} />
+        </a>
+        <div className="h-4 w-px bg-[#333]"></div>
+        <a
+          href="mailto:ammarqd@outlook.com"
+          className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
+          aria-label="Email"
+        >
+          <Mail size={16} strokeWidth={1.5} />
+        </a>
       </div>
-      <ul className="flex flex-col gap-6">
-        {navItems.map((item) => {
-          const isActive = hoveredSection ? hoveredSection === item.id : activeSection === item.id
-          return (
-            <li key={item.name}>
-              <a
-                href={`#${item.id}`}
-                data-section={item.id}
-                onClick={(e) => handleClick(e, item.id)}
-                onMouseEnter={() => setHoveredSection(item.id)}
-                className={`pb-[0.2em] relative text-[0.8em] uppercase tracking-[3px] font-medium transition-colors duration-300 ${
-                  isActive ? 'text-[#ccc]' : 'text-[#999]'
-                }`}
-              >
-                {item.name}
-              </a>
-            </li>
-          )
-        })}
-      </ul>
-    </nav>
+    </div>
   )
 }
