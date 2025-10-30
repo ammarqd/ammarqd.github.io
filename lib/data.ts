@@ -19,9 +19,9 @@ export interface Experience {
 
 export const aboutData: AboutData = {
   description: [
-    "I'm a software developer and engineer specialising in backend development, API design, and system architecture. I focus on clean, efficient code that doesn't sacrifice on performance. My development process is very user experience based, resulting in robust applications that provide a seamless integrated experience. ",
-    "While my focus is on backend engineering, I have experiences across the stack with frontend development having been my entry path into coding. I enjoy creating clear, easy-to-use interfaces and value good UI and UX as an important part of building complete, well-rounded systems.",
-    "In terms of learning and growing, I'm always trying out new things—whether that's an ambitious low-level technical project or something on the more creative side. I consider my curiosity and also my versatility to be two of my greatest strengths, and I'm always expanding the range of things I can do.",
+    "I'm a software developer and engineer specialising in backend development and API integration. I build systems that are maintainable, extendable and well architectured.",
+    "While my focus is on backend engineering, I have experience across the stack with frontend development having been my entry path into coding. I enjoy creating clear, easy-to-use interfaces and value good UI and UX as an important part of building complete, well-rounded systems.",
+    "In terms of learning and growth, I'm always trying out new things—whether that's an ambitious low-level technical project or something on the more creative side. I consider my curiosity and also my versatility to be two of my greatest strengths, and I'm always expanding the range of things I can do.",
     "Outside of programming, I love reading and gaming, and have recently been trying my hand at bouldering. I'm also fascinated by history—especially ancient civilisations."
   ]
 }
