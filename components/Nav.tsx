@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { IoMail} from 'react-icons/io5'
+import { MdMail} from 'react-icons/md'
 
 
 interface NavItem {
@@ -142,7 +142,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="GitHub"
         >
-          <FaGithub size={20} strokeWidth={1} />
+          <FaGithub size={20} />
         </a>
         <a
           href="https://linkedin.com/in/ammarqadir"
@@ -151,7 +151,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="LinkedIn"
         >
-          <FaLinkedin size={20} strokeWidth={1.5} />
+          <FaLinkedin size={20} />
         </a>
         <div className="h-4 w-px bg-[#333]"></div>
         <a
@@ -159,7 +159,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="Email"
         >
-          <IoMail size={20} strokeWidth={1.5} />
+          <MdMail size={20} />
         </a>
       </div>
 
@@ -216,7 +216,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="Email"
         >
-          <IoMail size={20} strokeWidth={0.5} />
+          <MdMail size={20} />
         </a>
       </div>
     </div>
