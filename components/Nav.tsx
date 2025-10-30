@@ -1,7 +1,9 @@
 "use client"
 
 import { useState, useEffect, useRef } from 'react'
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { IoMail} from 'react-icons/io5'
+
 
 interface NavItem {
   name: string
@@ -131,11 +133,42 @@ export default function Nav() {
 
   return (
     <div className="flex flex-col justify-between h-full">
+      {/* Mobile social links - shown only on mobile */}
+      <div className="flex lg:hidden items-center gap-5 mt-8">
+        <a
+          href="https://github.com/ammarqd"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
+          aria-label="GitHub"
+        >
+          <FaGithub size={18} strokeWidth={1} />
+        </a>
+        <a
+          href="https://linkedin.com/in/ammarqadir"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin size={18} strokeWidth={1.5} />
+        </a>
+        <div className="h-4 w-px bg-[#333]"></div>
+        <a
+          href="mailto:ammarqd@outlook.com"
+          className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
+          aria-label="Email"
+        >
+          <IoMail size={20} strokeWidth={1.5} />
+        </a>
+      </div>
+
+      {/* Desktop navigation */}
       <nav ref={navRef} onMouseLeave={() => setHoveredSection(null)} className="relative hidden lg:block">
         <div className="orb" ref={orbRef} style={orbStyle}>
           <div className="orb-dot" ref={orbDotRef}></div>
         </div>
-        <ul className="flex flex-col gap-6">
+        <ul className="flex flex-col gap-5">
           {navItems.map((item) => {
             const isActive = hoveredSection ? hoveredSection === item.id : activeSection === item.id
             return (
@@ -157,6 +190,7 @@ export default function Nav() {
         </ul>
       </nav>
 
+      {/* Desktop social links */}
       <div className="hidden lg:flex items-center gap-5">
         <a
           href="https://github.com/ammarqd"
@@ -165,7 +199,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="GitHub"
         >
-          <Github size={16} strokeWidth={1.5} />
+          <FaGithub size={18} />
         </a>
         <a
           href="https://linkedin.com/in/ammarqadir"
@@ -174,7 +208,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="LinkedIn"
         >
-          <Linkedin size={16} strokeWidth={1.5} />
+          <FaLinkedin size={18} />
         </a>
         <div className="h-4 w-px bg-[#333]"></div>
         <a
@@ -182,7 +216,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="Email"
         >
-          <Mail size={16} strokeWidth={1.5} />
+          <IoMail size={18} strokeWidth={0.5} />
         </a>
       </div>
     </div>
