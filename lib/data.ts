@@ -19,9 +19,10 @@ export interface Experience {
 
 export const aboutData: AboutData = {
   description: [
-    "I'm a developer driven by curiosity and a love for building things that work beautifully. I specialise in backend development and API integration, but I've also built dynamic frontends, a character-driven Unity game, an AI image classifier, and other projects that push my skills and creativity.",
-    "I enjoy tackling complex technical problems and finding elegant, user-focused solutions. Whether I'm refining code architecture, choosing the right algorithm or data structure, or shaping a smooth UI/UX, I love being involved in the whole process—seeing ideas take shape and grow into something real.",
-    "In my spare time, I love reading and gaming, and have recently been trying my hand at bouldering. I'm also fascinated by history, and have an occasional (frequent ◑.◑) sweet tooth."
+    "I am a software developer & engineer with specialisation in building backend systems and integrating APIs. I also have experience with frontend which was my entry path into coding. With a keen eye for visuals, and a strong intuition for UI/UX, I enjoy developing end-to-end solutions that look good and perform well.",
+    "My development process naturally prioritises the end user, aiming to deliver a seamless experience. Whether I'm thinking about my code architecture, choosing the right algorithm or data structure, or shaping a smooth UI/UX, the final user experience is always at the forefront of my mind.",
+    "In terms of my approach to learning and growing, I'm always looking for something new to try, whether an ambitious low level project or something on the more creative side. I consider my curiosity and also my versatility to be two of my best strengths, and I'm always expanding the range of things I can do.",
+    "In my spare time, I love reading and gaming, and have recently been trying my hand at bouldering. I'm also fascinated by history—particularly, ancient civilisations."
   ]
 }
 
@@ -88,7 +89,7 @@ export const projects: Project[] = [
     url: "https://github.com/ammarqd/weather-app-gui",
     image: "/images/weather-app.jpg",
     description:
-      "A weather app coded in React with a stylish GUI and weather information obtained through an API. Designed for tourists it has clothing and accessory recommendations based on the weather.",
+      "A weather app coded in React, with a stylish GUI and weather information obtained via an API. Designed for tourists, it has clothing and accessory recommendations based on the weather.",
     technologies: ["HTML", "CSS", "JavaScript", "React"]
   },
 ]
