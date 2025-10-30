@@ -34,7 +34,7 @@ export default function RootLayout({
               <Nav />
             </header>
 
-            <main className="lg:flex-1 lg:max-w-[52%] lg:py-24 py-12 flex flex-col justify-center gap-15 lg:gap-30">
+            <main className="lg:flex-1 lg:max-w-[52%] lg:py-24 py-12 mt-8 lg:mt-0 flex flex-col justify-center gap-15 lg:gap-30">
               {children}
             </main>
           </div>

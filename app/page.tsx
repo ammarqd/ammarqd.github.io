@@ -1,9 +1,9 @@
 'use client'
-import { ArrowUpRight } from 'lucide-react'
+import { LuArrowUpRight } from 'react-icons/lu'
 import { aboutData, projects, experiences, type Project, type Experience } from '@/lib/data'
 
 const SectionHeader = ({ children }: { children: string }) => (
-  <h2 className="lg:hidden sticky top-0 bg-[#111] z-10 py-4 text-[#999] text-xs uppercase tracking-[3px] font-medium border-b border-neutral-800 mb-8">
+  <h2 className="lg:hidden sticky top-0 bg-[#111] z-10 pt-4.5 pb-4 text-[#999] text-xs uppercase tracking-[3px] font-medium border-b border-neutral-800 mb-8">
     {children}
   </h2>
 )
@@ -15,7 +15,7 @@ export default function Home() {
         <SectionHeader>About</SectionHeader>
         <section className="flex flex-col gap-4">
           {aboutData.description.map((paragraph, index) => (
-            <p key={index} className="leading-[2.0]">{paragraph}</p>
+            <p key={index} className="leading-[1.625]">{paragraph}</p>
           ))}
         </section>
       </div>
@@ -35,7 +35,7 @@ export default function Home() {
                 <h3 className="text-neutral-300 text-md font-semibold">
                   {exp.position} · {exp.company}
                 </h3>
-                <p className="leading-[2.0] text-sm">{exp.description}</p>
+                <p className="leading-[1.625] text-sm">{exp.description}</p>
               </div>
             </article>
           ))}
@@ -64,9 +64,9 @@ export default function Home() {
                 <div className="flex flex-col gap-3 order-1 sm:order-2">
                   <h3 className="inline-flex items-center gap-1 text-base font-semibold">
                     {project.title}
-                    <ArrowUpRight className="inline-block transition-transform duration-200 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" size={16} />
+                    <LuArrowUpRight className="inline-block transition-transform duration-200 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" size={16} />
                   </h3>
-                  <p className="leading-[2.0] text-sm text-neutral-400">{project.description}</p>
+                  <p className="leading-[1.625] text-sm text-neutral-400">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mt-1">
                     {project.technologies.map((tech, techIndex) => (
                       <span
@@ -89,9 +89,9 @@ export default function Home() {
             Contact
           </h2>
         <section className="flex flex-col gap-6 lg:border-t border-neutral-800 lg:pt-10 lg:border-t">
-          <p className="text-sm text-neutral-400 leading-[2.0] max-w-md">
+          <p className="text-sm text-neutral-400 leading-[1.625] max-w-md">
             I'm always open to interesting projects, collaboration, or just a quick chat.
-            Reach out with any questions or ideas via{' '}
+            Get in touch with any questions or ideas via{' '}
             <a
               href="mailto:ammarqd@outlook.com"
               className="text-white no-underline border-b border-transparent hover:border-white transition-all duration-200"
