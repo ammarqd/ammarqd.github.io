@@ -46,40 +46,40 @@ export default function Home() {
         <SectionHeader>Projects</SectionHeader>
         <section className="flex flex-col gap-8">
           {projects.map((project: Project, index: number) => (
-            <a
-              key={index}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-neutral-300 transition-colors duration-200 w-fit hover:text-white"
-            >
-              <article className="group relative grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-4 transition-all duration-300">
-                <div className="relative h-32 w-48 sm:h-20 sm:w-full overflow-hidden rounded-md border border-neutral-800 bg-neutral-900/50 order-2 sm:order-1">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-full w-full object-cover opacity-70 transition-opacity duration-300 group-hover:opacity-100"
-                  />
-                </div>
-                <div className="flex flex-col gap-3 order-1 sm:order-2">
-                  <h3 className="inline-flex items-center gap-1 text-base font-semibold">
+            <article key={index} className="group relative grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-4 transition-all duration-300">
+              <div className="relative h-32 w-48 sm:h-20 sm:w-full overflow-hidden rounded-md border border-neutral-800 bg-neutral-900/50 order-2 sm:order-1">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+                />
+              </div>
+              <div className="flex flex-col gap-3 order-1 sm:order-2">
+                <h3 className="text-base font-semibold">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/link inline-flex items-center gap-1 text-neutral-300 transition-colors duration-200 hover:text-white"
+                  >
+                    <span className="absolute -inset-x-4 -inset-y-4 hidden lg:block" aria-hidden="true"></span>
                     {project.title}
-                    <LuArrowUpRight className="inline-block transition-transform duration-200 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" size={16} />
-                  </h3>
-                  <p className="leading-[1.625] text-sm text-neutral-400">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mt-1">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 text-xs text-neutral-400 font-medium rounded-md border border-[#333]"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                    <LuArrowUpRight className="inline-block transition-transform duration-200 group-hover/link:translate-x-[2px] group-hover/link:-translate-y-[2px] lg:group-hover:translate-x-[2px] lg:group-hover:-translate-y-[2px]" size={16} />
+                  </a>
+                </h3>
+                <p className="leading-[1.625] text-sm text-neutral-400">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 text-xs text-neutral-400 font-medium rounded-md border border-[#333]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-              </article>
-            </a>
+              </div>
+            </article>
           ))}
         </section>
       </div>
