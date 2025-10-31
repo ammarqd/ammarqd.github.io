@@ -3,7 +3,8 @@ import { LuArrowUpRight } from 'react-icons/lu'
 import { aboutData, projects, experiences, type Project, type Experience } from '@/lib/data'
 
 const SectionHeader = ({ children }: { children: string }) => (
-  <h2 className="lg:hidden sticky top-0 bg-[#111] z-10 pt-4.5 pb-4 text-[#999] text-xs uppercase tracking-[3px] font-medium border-b border-neutral-800 mb-8">
+  <h2 className="lg:hidden sticky top-0 z-10 py-4 text-[#999] text-sm uppercase tracking-[3px] font-medium border-neutral-800 mb-4 relative -mx-6 md:-mx-16 px-6 md:px-16">
+    <span className="absolute inset-0 bg-[#111]/80 backdrop-blur-lg -z-10"></span>
     {children}
   </h2>
 )
@@ -72,7 +73,7 @@ export default function Home() {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 text-xs text-neutral-400 font-medium rounded-md border border-[#333]"
+                      className="px-3 py-1 text-xs text-neutral-400 font-medium rounded-lg border border-neutral-800"
                     >
                       {tech}
                     </span>
@@ -85,7 +86,7 @@ export default function Home() {
       </div>
      
       <div id="contact">
-         <h2 className="lg:hidden bg-[#111] z-10 py-4 text-[#999] text-xs uppercase tracking-[3px] font-medium border-b border-neutral-800 mb-8">
+         <h2 className="lg:hidden bg-[#111] z-10 py-4 text-[#999] text-sm uppercase tracking-[3px] font-medium border-neutral-800 mb-4">
             Contact
           </h2>
         <section className="flex flex-col gap-6 lg:border-t border-neutral-800 lg:pt-10 lg:border-t">
