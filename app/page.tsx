@@ -3,7 +3,7 @@ import { LuArrowUpRight } from 'react-icons/lu'
 import { aboutData, projects, experiences, type Project, type Experience } from '@/lib/data'
 
 const SectionHeader = ({ children }: { children: string }) => (
-  <h2 className="lg:hidden sticky top-0 z-10 py-4 text-[#999] text-sm uppercase tracking-[3px] font-medium border-neutral-800 mb-4 relative -mx-6 md:-mx-16 px-6 md:px-16">
+  <h2 className="lg:hidden sticky top-0 z-10 py-4 text-[#ccc] text-sm uppercase tracking-[3px] font-medium border-neutral-800 mb-4 relative -mx-6 md:-mx-16 px-6 md:px-16">
     <span className="absolute inset-0 bg-[#111]/80 backdrop-blur-lg -z-10"></span>
     {children}
   </h2>
@@ -86,7 +86,7 @@ export default function Home() {
       </div>
      
       <div id="contact">
-         <h2 className="lg:hidden bg-[#111] z-10 py-4 text-[#999] text-sm uppercase tracking-[3px] font-medium border-neutral-800 mb-4">
+         <h2 className="lg:hidden bg-[#111] z-10 py-4 text-[#ccc] text-sm uppercase tracking-[3px] font-medium border-neutral-800 mb-4">
             Contact
           </h2>
         <section className="flex flex-col gap-6 lg:border-t border-neutral-800 lg:pt-10 lg:border-t">
