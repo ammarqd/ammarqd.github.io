@@ -19,10 +19,10 @@ export interface Experience {
 
 export const aboutData: AboutData = {
   description: [
-    "I'm a software developer and engineer specialising in backend development and API integration. I build systems that are maintainable, extendable and well architectured.",
-    "While my focus is on backend engineering, I have experience across the stack with frontend development having been my entry path into coding. I enjoy creating clear, easy-to-use interfaces and value good UI and UX as an important part of building complete, well-rounded systems.",
-    "In terms of learning and growth, I'm always trying out new things—whether that's an ambitious low-level technical project or something on the more creative side. I consider my curiosity and also my versatility to be two of my greatest strengths, and I'm always expanding the range of things I can do.",
-    "Outside of programming, I love reading and gaming, and have recently been trying my hand at bouldering. I'm also fascinated by history—especially ancient civilisations."
+    "I'm a software developer and engineer specialising in backend development and API integration. I build systems that are maintainable, extensible and well-architected. I'm especially interested in the underlying logic and ‘why’ behind systems, and that curiosity drives much of my work.",
+    "While my focus is on backend engineering, I have experience across the stack, having started my coding journey with frontend development. I enjoy creating clear, easy-to-use interfaces and value good UI and UX as an important part of building complete, well-rounded systems.",
+    "In terms of learning and growth, I'm always trying out new things—whether that's an ambitious low-level technical project or something on the more creative side. My curiosity and versatility are two of my biggest strengths, and I'm always expanding the range of things I can build and understand.",
+    "Outside of programming, I love reading and gaming, and have recently been trying my hand at bouldering. I'm also fascinated by history, especially ancient civilisations."
   ]
 }
 
@@ -34,14 +34,14 @@ export const experiences: Experience[] = [
     company: "Queen Mary University of London",
     duration: "2022 — 2025",
     description:
-      "Coordinated with module organiser, senior demonstrator and fellow demonstrators to oversee classes of 100+ students. Graded labs and taught module concepts. Recognised for higher student satisfaction during my demonstrator cohort."
+      "Supervised and graded lab sessions for 100+ first and second year students with the module organiser and demonstrator team. Taught key module concepts and contributed to higher student satisfaction than previous cohorts."
   },
   {
     position: "Private Tutor",
     company: "Modern Tuition / Freelance",
     duration: "2021 — 2025",
     description:
-      "Taught secondary school students and students taking the 11+ exam. Tailored Maths and Science tutoring to meet individual learning needs, in both in-person and online environments."
+      "Delivered one-on-one Maths and Science tutoring for secondary school and 11+ exam students, adapting lessons to each student’s needs in-person and online."
   }
 ]
 
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     technologies: ["React", "TailwindCSS", "Express", "PostgreSQL"]
   },
   {
-    title: "CIFAR-10 Image Classifier",
+    title: "Deep Learning Image Classifier",
     url: "https://github.com/ammarqd/deep-learning-image-classifier",
     image: "/images/nndl-classifier.jpg",
     description:
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     url: "https://github.com/ammarqd/image-processing-application",
     image: "/images/image-processing-app.jpg",
     description:
-      "An Image processing application for processing a single image with filters or filtering between two images. Also includes the ability to click and drag a region to apply multiple filters onto a single image.",
+      "A desktop application featuring single and dual-image filters, supporting a wide range of operations, with the option to apply effects to a selected area via click-and-drag.",
     technologies: ["Java", "Swing"]
   },
   {
