@@ -59,6 +59,13 @@ export default function Nav() {
 
   // Orb movement logic between nav items
   useEffect(() => {
+    if (hoveredSection && hoveredSection !== activeSection) {
+      setHoveredSection(null)
+    }
+  }, [activeSection])
+
+  // Orb movement logic between nav items
+  useEffect(() => {
     const targetSection = hoveredSection || activeSection
     const targetLink = navRef.current?.querySelector<HTMLAnchorElement>(`[data-section="${targetSection}"]`)
     const orb = orbRef.current
@@ -168,7 +175,7 @@ export default function Nav() {
         <div className="orb" ref={orbRef} style={orbStyle}>
           <div className="orb-dot" ref={orbDotRef}></div>
         </div>
-        <ul className="flex flex-col gap-5">
+        <ul onMouseLeave={() => setHoveredSection(null)} className="flex flex-col w-max -my-2">
           {navItems.map((item) => {
             const isActive = hoveredSection ? hoveredSection === item.id : activeSection === item.id
             return (
@@ -178,7 +185,7 @@ export default function Nav() {
                   data-section={item.id}
                   onClick={(e) => handleClick(e, item.id)}
                   onMouseEnter={() => setHoveredSection(item.id)}
-                  className={`pb-[0.2em] relative text-[0.8em] uppercase tracking-[3px] font-medium transition-colors duration-300 ${
+                  className={`block py-3 relative text-[0.8em] uppercase tracking-[3px] font-medium transition-colors duration-300 ${
                     isActive ? 'text-[#ccc]' : 'text-[#999]'
                   }`}
                 >

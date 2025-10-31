@@ -3,7 +3,7 @@
 /* Orb container - moves between nav items */
 .orb {
   position: absolute;
-  top: -12px;
+  top: 0;
   left: 0;
   width: 0;
   height: 0;
