@@ -57,14 +57,14 @@ export default function Nav() {
     }
   }, [])
 
-  // Orb movement logic between nav items
+  // Reset hover when active section changes (scroll takes priority)
   useEffect(() => {
     if (hoveredSection && hoveredSection !== activeSection) {
       setHoveredSection(null)
     }
-  }, [activeSection])
+  }, [activeSection]) // Only watch activeSection, not hoveredSection
 
-  // Orb movement logic between nav items
+  // Orb positioning
   useEffect(() => {
     const targetSection = hoveredSection || activeSection
     const targetLink = navRef.current?.querySelector<HTMLAnchorElement>(`[data-section="${targetSection}"]`)
@@ -80,48 +80,49 @@ export default function Nav() {
     }
   }, [activeSection, hoveredSection])
 
-  // Unified scroll handler for section detection
-  useEffect(() => {
+ useEffect(() => {
+    let prevAtBottom = false
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      {
+        rootMargin: '-30% 0px -70% 0px',
+        threshold: 0
+      }
+    )
+
+    const elements = navItems
+      .map(item => document.getElementById(item.id))
+      .filter((el): el is HTMLElement => el !== null)
+    
+    elements.forEach(el => observer.observe(el))
+
+
     const handleScroll = () => {
-      const viewportHeight = window.innerHeight
-      const scrollPosition = window.scrollY + window.innerHeight
-      const pageHeight = document.documentElement.scrollHeight
-      const isAtBottom = scrollPosition >= pageHeight - 10
+      const isAtBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight
       
       if (isAtBottom) {
         setActiveSection('contact')
-        return
+        prevAtBottom = true
+      } else if (prevAtBottom) {
+        observer.disconnect()
+        elements.forEach(el => observer.observe(el))
+        prevAtBottom = false
       }
-      
-      const sections = navItems.map(item => {
-        const element = document.getElementById(item.id)
-        if (!element) return null
-        
-        const rect = element.getBoundingClientRect()
-        
-        return {
-          id: item.id,
-          element,
-          rect,
-          distanceFromTop: rect.top
-        }
-      }).filter(Boolean) as Array<{ id: string; element: HTMLElement; rect: DOMRect; distanceFromTop: number }>
-
-      let currentSection = 'about'
-      
-      for (const section of sections) {
-        if (section.distanceFromTop <= viewportHeight * 0.3 && section.rect.bottom > 0) {
-          currentSection = section.id
-        }
-      }
-      
-      setActiveSection(currentSection)
     }
 
-    handleScroll()
-    
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   return (
