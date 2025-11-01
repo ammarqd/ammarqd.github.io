@@ -124,20 +124,6 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Handle nav clicks
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault()
-    if (sectionId === 'about') {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      return
-    }
-
-    const section = document.getElementById(sectionId)
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
-
   return (
     <div className="flex flex-col justify-between h-full">
       {/* Mobile social links - shown only on mobile */}
@@ -183,7 +169,6 @@ export default function Nav() {
                 <a
                   href={`#${item.id}`}
                   data-section={item.id}
-                  onClick={(e) => handleClick(e, item.id)}
                   onMouseEnter={() => setHoveredSection(item.id)}
                   className={`block py-3 relative text-[0.8em] uppercase tracking-[3px] font-medium transition-colors duration-300 ${
                     isActive ? 'text-[#ccc]' : 'text-[#999]'

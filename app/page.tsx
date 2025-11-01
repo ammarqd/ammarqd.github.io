@@ -12,7 +12,7 @@ const SectionHeader = ({ children }: { children: string }) => (
 export default function Home() {
   return (
     <>
-      <div id="about">
+      <div id="about" className="scroll-mt-24">
         <SectionHeader>About</SectionHeader>
         <section className="flex flex-col gap-4">
           {aboutData.description.map((paragraph, index) => (
@@ -21,7 +21,7 @@ export default function Home() {
         </section>
       </div>
 
-      <div id="experience">
+      <div id="experience" className="scroll-mt-28">
         <SectionHeader>Experience</SectionHeader>
         <section className="flex flex-col gap-8">
           {experiences.map((exp: Experience, index: number) => (
@@ -43,7 +43,7 @@ export default function Home() {
         </section>
       </div>
      
-      <div id="projects">
+      <div id="projects" className="scroll-mt-24">
         <SectionHeader>Projects</SectionHeader>
         <section className="flex flex-col gap-8">
           {projects.map((project: Project, index: number) => (
