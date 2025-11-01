@@ -20,6 +20,7 @@ export default function Nav() {
   const [activeSection, setActiveSection] = useState<string>('about')
   const [hoveredSection, setHoveredSection] = useState<string | null>(null)
   const [orbStyle, setOrbStyle] = useState<{ transform: string }>({ transform: 'translate(0px, 0px)' })
+  const manualScrollRef = useRef<boolean>(false)
 
   const navItems: NavItem[] = [
     { name: 'about', id: 'about' },
@@ -62,7 +63,7 @@ export default function Nav() {
     if (hoveredSection && hoveredSection !== activeSection) {
       setHoveredSection(null)
     }
-  }, [activeSection]) // Only watch activeSection, not hoveredSection
+  }, [activeSection])
 
   // Orb positioning
   useEffect(() => {
@@ -85,6 +86,7 @@ export default function Nav() {
     
     const observer = new IntersectionObserver(
       (entries) => {
+        if (manualScrollRef.current) return
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id)
@@ -170,6 +172,13 @@ export default function Nav() {
                 <a
                   href={`#${item.id}`}
                   data-section={item.id}
+                  onClick={() => {
+                    manualScrollRef.current = true
+                    setActiveSection(item.id)
+                    setTimeout(() => {
+                      manualScrollRef.current = false
+                    }, 300)
+                  }}
                   onMouseEnter={() => setHoveredSection(item.id)}
                   className={`block py-3 relative text-[0.8em] uppercase tracking-[3px] font-medium transition-colors duration-300 ${
                     isActive ? 'text-[#ccc]' : 'text-[#999]'
