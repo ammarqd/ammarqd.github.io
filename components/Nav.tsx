@@ -129,7 +129,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="GitHub"
         >
-          <FaGithub size={20} />
+          <FaGithub size={24} />
         </a>
         <a
           href="https://linkedin.com/in/ammarqadir"
@@ -138,7 +138,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="LinkedIn"
         >
-          <FaLinkedin size={20} />
+          <FaLinkedin size={24} />
         </a>
         <div className="h-4 w-px bg-[#333]"></div>
         <a
@@ -146,7 +146,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="Email"
         >
-          <MdMail size={20} />
+          <MdMail size={24} />
         </a>
       </div>
 
@@ -191,7 +191,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="GitHub"
         >
-          <FaGithub size={20} />
+          <FaGithub size={24} />
         </a>
         <a
           href="https://linkedin.com/in/ammarqadir"
@@ -200,7 +200,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="LinkedIn"
         >
-          <FaLinkedin size={20} />
+          <FaLinkedin size={24} />
         </a>
         <div className="h-4 w-px bg-[#333]"></div>
         <a
@@ -208,7 +208,7 @@ export default function Nav() {
           className="text-[#999] hover:text-[#ccc] transition-colors duration-300"
           aria-label="Email"
         >
-          <MdMail size={20} />
+          <MdMail size={24} />
         </a>
       </div>
     </div>
