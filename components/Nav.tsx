@@ -18,7 +18,6 @@ export default function Nav() {
   const startTimeRef = useRef<number>(Date.now())
   
   const [activeSection, setActiveSection] = useState<string>('about')
-  const [hoveredSection, setHoveredSection] = useState<string | null>(null)
   const [orbStyle, setOrbStyle] = useState<{ transform: string }>({ transform: 'translate(0px, 0px)' })
   const manualScrollRef = useRef<boolean>(false)
 
@@ -58,17 +57,9 @@ export default function Nav() {
     }
   }, [])
 
-  // Reset hover when active section changes (scroll takes priority)
+  // Orb positioning - only based on activeSection now
   useEffect(() => {
-    if (hoveredSection && hoveredSection !== activeSection) {
-      setHoveredSection(null)
-    }
-  }, [activeSection])
-
-  // Orb positioning
-  useEffect(() => {
-    const targetSection = hoveredSection || activeSection
-    const targetLink = navRef.current?.querySelector<HTMLAnchorElement>(`[data-section="${targetSection}"]`)
+    const targetLink = navRef.current?.querySelector<HTMLAnchorElement>(`[data-section="${activeSection}"]`)
     const orb = orbRef.current
 
     if (targetLink && orb && navRef.current) {
@@ -79,7 +70,7 @@ export default function Nav() {
 
       setOrbStyle({ transform: `translate(${x}px, ${y}px)` })
     }
-  }, [activeSection, hoveredSection])
+  }, [activeSection])
 
  useEffect(() => {
     let prevAtBottom = false
@@ -160,13 +151,13 @@ export default function Nav() {
       </div>
 
       {/* Desktop navigation */}
-      <nav ref={navRef} onMouseLeave={() => setHoveredSection(null)} className="relative hidden lg:block">
+      <nav ref={navRef} className="relative hidden lg:block">
         <div className="orb" ref={orbRef} style={orbStyle}>
           <div className="orb-dot" ref={orbDotRef}></div>
         </div>
-        <ul onMouseLeave={() => setHoveredSection(null)} className="flex flex-col w-max -my-2">
+        <ul className="flex flex-col w-max -my-2">
           {navItems.map((item) => {
-            const isActive = hoveredSection ? hoveredSection === item.id : activeSection === item.id
+            const isActive = activeSection === item.id
             return (
               <li key={item.name}>
                 <a
@@ -177,10 +168,9 @@ export default function Nav() {
                     setActiveSection(item.id)
                     setTimeout(() => {
                       manualScrollRef.current = false
-                    }, 300)
+                    }, 200)
                   }}
-                  onMouseEnter={() => setHoveredSection(item.id)}
-                  className={`block py-3 relative text-[0.8em] uppercase tracking-[3px] font-medium transition-colors duration-300 ${
+                  className={`block py-3 relative text-[0.8em] uppercase tracking-[3px] font-medium transition-colors duration-300 hover:text-[#ccc] ${
                     isActive ? 'text-[#ccc]' : 'text-[#999]'
                   }`}
                 >
