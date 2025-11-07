@@ -19,10 +19,10 @@ export interface Experience {
 
 export const aboutData: AboutData = {
   description: [
-    "I'm a software developer and engineer specialising in backend development and API integration. I build systems that are maintainable, extensible and well-architected. I'm especially interested in the underlying logic and ‘why’ behind systems, and that curiosity drives much of my work.",
-    "While my focus is on backend engineering, I have experience across the stack, having started my coding journey with frontend development. I enjoy creating clear, easy-to-use interfaces and value good UI and UX as an important part of building complete, well-rounded systems.",
-    "In terms of learning and growth, I'm always trying out new things—whether that's an ambitious low-level technical project or something on the more creative side. My curiosity and versatility are two of my biggest strengths, and I'm always expanding the range of things I can build and understand.",
-    "Outside of programming, I love reading and gaming, and have recently been trying my hand at bouldering. I'm also fascinated by history, especially ancient civilisations."
+    "I'm a developer passionate about designing systems with thoughtful and deliberate engineering. My primary focus is building backend systems and integrating APIs that connect services effectively — creating reliable, maintainable solutions that support great user experiences.",
+    "I have experience across the stack, having started with frontend development, which has given me an appreciation for visuals and UI/UX. A key focus of mine is bridging frontend and backend to form complete end-to-end experiences that feel cohesive and seamless.",
+    "More generally, I love exploring new ideas and concepts — whether that's an ambitious technical project or something on the creative side. My curiosity and versatility are two of my biggest strengths, and I'm always expanding the range of things I can build and understand.",
+    "Outside of programming, I love reading and gaming and have recently been trying my hand at bouldering. I'm also fascinated by history, especially ancient civilisations."
   ]
 }
 
@@ -34,7 +34,7 @@ export const experiences: Experience[] = [
     company: "Queen Mary University of London",
     duration: "2022 — 2025",
     description:
-      "Supervised and graded lab sessions for 100+ first and second year students with the module organiser and demonstrator team. Taught key module concepts and contributed to higher student satisfaction than previous cohorts."
+      "Supervised and graded labs for groups of 100+ first and second year students with the module organiser and demonstrator team. Taught key module concepts and contributed to higher student satisfaction than previous cohorts."
   },
   {
     position: "Private Tutor",
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     url: "https://github.com/ammarqd/weather-app-gui",
     image: "/images/weather-app.jpg",
     description:
-      "A weather app coded in React, with a stylish GUI and weather information obtained via an API. Designed for tourists, it has clothing and accessory recommendations based on the weather.",
+      "A React app with a stylish GUI and weather information obtained via an API. Designed for tourists, it has clothing and accessory recommendations based on the weather.",
     technologies: ["HTML", "CSS", "JavaScript", "React"]
   },
 ]

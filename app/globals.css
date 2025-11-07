@@ -7,7 +7,7 @@ html {
 /* Orb container - moves between nav items */
 .orb {
   position: absolute;
-  top: 0;
+  top: 3px;
   left: 0;
   width: 0;
   height: 0;
@@ -19,8 +19,8 @@ html {
 /* Orb dot - animated in infinity loop via JavaScript */
 .orb-dot {
   position: absolute;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: radial-gradient(
     circle,

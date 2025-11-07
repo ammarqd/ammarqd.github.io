@@ -28,17 +28,35 @@ export default function Nav() {
     { name: 'contact', id: 'contact' }
   ]
 
-  // Infinity loop animation
+// Infinity loop animation
   useEffect(() => {
     const a = 10
     const b = 6
     const speed = 3500
 
+    // Snappy easing with moderate speed variation
+    const easeWithSnapBack = (t: number): number => {
+      // Split the loop into two halves (left and right side of infinity)
+      const halfProgress = (t * 2) % 1
+      
+      // Asymmetric easing - keeps minimum speed higher while maintaining snappy acceleration
+      const eased = halfProgress < 0.5
+        ? 4 * halfProgress * halfProgress * halfProgress * 0.4 + halfProgress * 0.6
+        : 1 - 4 * Math.pow(1 - halfProgress, 3) * 0.4 - (1 - halfProgress) * 0.6
+      
+      // Return the full progress with easing applied to each half
+      return (Math.floor(t * 2) + eased) / 2
+    }
+
     const animate = () => {
       if (!orbDotRef.current) return
       
       const elapsed = Date.now() - startTimeRef.current
-      const t = (elapsed % speed) / speed * Math.PI * 2
+      const progress = (elapsed % speed) / speed
+      
+      // Apply snap-back easing
+      const easedProgress = easeWithSnapBack(progress)
+      const t = easedProgress * Math.PI * 2
       
       const x = a * Math.cos(t)
       const y = b * Math.sin(t) * Math.cos(t)
