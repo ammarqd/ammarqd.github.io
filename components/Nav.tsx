@@ -16,9 +16,7 @@ export default function Nav() {
   const orbDotRef = useRef<HTMLDivElement>(null)
   const animationFrameRef = useRef<number | null>(null)
   const startTimeRef = useRef<number>(Date.now())
-  
   const [activeSection, setActiveSection] = useState<string>('about')
-  const [orbStyle, setOrbStyle] = useState<{ transform: string }>({ transform: 'translate(0px, 0px)' })
   const manualScrollRef = useRef<boolean>(false)
 
   const navItems: NavItem[] = [
@@ -56,7 +54,7 @@ export default function Nav() {
       
       // Apply snap-back easing
       const easedProgress = easeWithSnapBack(progress)
-      const t = easedProgress * Math.PI * 2
+      const t = -(easedProgress * Math.PI * 2 + Math.PI / 2)
       
       const x = a * Math.cos(t)
       const y = b * Math.sin(t) * Math.cos(t)
@@ -74,21 +72,6 @@ export default function Nav() {
       }
     }
   }, [])
-
-  // Orb positioning - only based on activeSection now
-  useEffect(() => {
-    const targetLink = navRef.current?.querySelector<HTMLAnchorElement>(`[data-section="${activeSection}"]`)
-    const orb = orbRef.current
-
-    if (targetLink && orb && navRef.current) {
-      const linkRect = targetLink.getBoundingClientRect()
-      const navRect = navRef.current.getBoundingClientRect()
-      const x = linkRect.left - navRect.left - 12
-      const y = linkRect.top - navRect.top + 8
-
-      setOrbStyle({ transform: `translate(${x}px, ${y}px)` })
-    }
-  }, [activeSection])
 
  useEffect(() => {
     let prevAtBottom = false
@@ -136,6 +119,20 @@ export default function Nav() {
     }
   }, [])
 
+  useEffect(() => {
+    if (!navRef.current || !orbRef.current) return
+
+    const activeLink = navRef.current.querySelector<HTMLElement>(
+      `[data-section="${activeSection}"]`
+    )
+    if (!activeLink) return
+
+    const navTop = navRef.current.getBoundingClientRect().top
+    const linkTop = activeLink.getBoundingClientRect().top - navTop
+
+    orbRef.current.style.transform = `translateY(${linkTop}px)`
+  }, [activeSection])
+
   return (
     <div className="flex flex-col justify-between h-full">
       {/* Mobile social links - shown only on mobile */}
@@ -169,11 +166,11 @@ export default function Nav() {
       </div>
 
       {/* Desktop navigation */}
-      <nav ref={navRef} className="relative hidden lg:block">
-        <div className="orb" ref={orbRef} style={orbStyle}>
+      <nav ref={navRef} className="relative hidden lg:block -mt-2">
+        <div className="orb" ref={orbRef}>
           <div className="orb-dot" ref={orbDotRef}></div>
         </div>
-        <ul className="flex flex-col w-max -my-2">
+        <ul className="flex flex-col w-max">
           {navItems.map((item) => {
             const isActive = activeSection === item.id
             return (
@@ -201,7 +198,7 @@ export default function Nav() {
       </nav>
 
       {/* Desktop social links */}
-      <div className="hidden lg:flex items-center gap-5">
+      <div className="hidden lg:flex items-center gap-5 ">
         <a
           href="https://github.com/ammarqd"
           target="_blank"

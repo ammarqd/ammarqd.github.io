@@ -7,8 +7,8 @@ html {
 /* Orb container - moves between nav items */
 .orb {
   position: absolute;
-  top: 3px;
-  left: 0;
+  top: 10px;
+  left: -12px;
   width: 0;
   height: 0;
   transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);

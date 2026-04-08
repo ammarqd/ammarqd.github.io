@@ -67,18 +67,18 @@ export default function Home() {
                     {project.title}
                     <LuArrowUpRight className="inline-block transition-transform duration-200 group-hover/link:translate-x-[2px] group-hover/link:-translate-y-[2px] lg:group-hover:translate-x-[2px] lg:group-hover:-translate-y-[2px]" size={16} />
                   </a>
-                </h3>
-                <p className="leading-[1.625] text-sm text-neutral-400">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mt-1">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 text-xs text-neutral-400 font-medium rounded-lg border border-neutral-800"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                  </h3>
+                  <p className="leading-[1.625] text-sm text-neutral-400">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-3 py-1 text-xs text-neutral-400 font-medium rounded-lg border border-neutral-800"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
               </div>
             </article>
           ))}
