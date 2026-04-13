@@ -80,7 +80,7 @@ export const projects: Project[] = [
   },
   {
     title: "Never Upon a Time",
-    url: "https://ammarqd.github.io/never-upon-a-time-build/build/index.html",
+    url: "https://ammarqd.github.io/Never-Upon-a-Time-build/Build/index.html",
     image: "/images/never-upon-a-time.jpg",
     description:
       "Follow the protagonist through a surreal realm inspired by Alice in Wonderland, navigating Victorian streets, opulent mansions, and bizarre spaces in search of a lost cat named Seren.",
