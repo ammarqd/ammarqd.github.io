@@ -20,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fira_sans.className} bg-[#111] text-neutral-400`}>
-        <div className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 lg:px-16 py-10 lg:py-0">
+        <div className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-16 lg:px-14 py-10 lg:py-0">
           <div className="lg:flex">
             <header className="lg:sticky lg:top-0 lg:w-[40%] lg:py-24 lg:max-h-screen flex flex-col lg:gap-16">
               <div className="flex flex-col gap-5 items-start w-full">
-                <h1 className="text-[#ddd] text-[2.6em] lg:text-[3em] font-semibold tracking-wide leading-none lg:mt-2">
+                <h1 className="text-[#ddd] text-[2.6em] lg:text-[3em] font-semibold tracking-wide leading-none">
                   <a href="/">Ammar Qadir
                   </a>
                 </h1>
@@ -35,7 +35,7 @@ export default function RootLayout({
               <Nav />
             </header>
 
-            <main className="lg:flex-1 lg:max-w-prose lg:py-24 py-12 mt-8 lg:mt-2 flex flex-col justify-center gap-15 lg:gap-30">
+            <main className="lg:flex-1 lg:max-w-prose lg:py-24 py-12 mt-8 lg:mt-0 flex flex-col justify-center gap-15 lg:gap-30">
               {children}
             </main>
           </div>

@@ -166,7 +166,7 @@ export default function Nav() {
       </div>
 
       {/* Desktop navigation */}
-      <nav ref={navRef} className="relative hidden lg:block -mt-2">
+      <nav ref={navRef} className="relative hidden lg:block">
         <div className="orb" ref={orbRef}>
           <div className="orb-dot" ref={orbDotRef}></div>
         </div>
@@ -198,7 +198,7 @@ export default function Nav() {
       </nav>
 
       {/* Desktop social links */}
-      <div className="hidden lg:flex items-center gap-5 ">
+      <div className="hidden lg:flex items-center gap-5">
         <a
           href="https://github.com/ammarqd"
           target="_blank"
