@@ -25,7 +25,8 @@ export default function RootLayout({
             <header className="lg:sticky lg:top-0 lg:w-[40%] lg:py-24 lg:max-h-screen flex flex-col lg:gap-16">
               <div className="flex flex-col gap-5 items-start w-full">
                 <h1 className="text-[#ddd] text-[2.6em] lg:text-[3em] font-semibold tracking-wide leading-none lg:mt-2">
-                  Ammar Qadir
+                  <a href="/">Ammar Qadir
+                  </a>
                 </h1>
                 <h2 className="text-[#ccc] text-md lg:text-[1.1em] uppercase tracking-[3px] font-medium">
                   Software Engineer
