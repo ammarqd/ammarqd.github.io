@@ -46,12 +46,19 @@ export const experiences: Experience[] = [
 ]
 
 export const projects: Project[] = [
+    {
+    title: "Event-Driven Payment Ledger",
+    url: "https://github.com/ammarqd/event-driven-payment-ledger",
+    image: "/images/event-driven-payment-ledger.png",
+    description: "Event-driven payment ledger built to handle high-concurrency transactions safely using double-entry bookkeeping, strict idempotency keys, and pessimistic row locking.",
+    technologies: ["C#", ".NET", "RabbitMQ", "Postgres"]
+  },
   {
     title: "ImageFlow",
     url: "https://github.com/ammarqd/imageflow-app",
     image: "/images/imageflow-app.png",
     description: "A distributed, asynchronous image processing application handling batch uploads. Utilises OpenCV and the YuNet model for AI-assisted smart cropping, with results displayed in a gallery view.",
-    technologies: ["FastAPI", "Postgres", "Redis", "Celery", "React"]
+    technologies: ["FastAPI", "Celery", "Redis", "React"]
   },
   {
     title: "Cool Compiler",
