@@ -20,7 +20,7 @@ export interface Experience {
 export const aboutData: AboutData = {
   description: [
     "Hi, I'm Ammar. I’m a software engineer focused on backend engineering and data-intensive applications, with a curiosity for how software systems work under the hood. I enjoy designing thoughtful solutions and building systems that balance technical depth with practical engineering.",
-    "Currently, I'm building ImageFlow, an image processing application exploring asynchronous workloads, service coordination, and complex data flows. Alongside it, I've been finalising a compiler project that has deepened my understanding of language design and systems-level concepts.",
+    "Lately, I've been building an event-driven payment ledger centered around double-entry bookkeeping, strict idempotency, and concurrency locking under load. Alongside it, I'm finalising ImageFlow, a distributed, asynchronous image processing pipeline built for batch uploads and AI-assisted smart cropping.",
     "The engineering challenges I thrive on are the ones where the complexity lies beneath the surface: how data moves through a system, how different services manage state and memory, and how early design decisions shape performance down the line. I'm especially keen to keep working on backend systems and data-intensive applications where these challenges take centre stage.",
     "In my spare time, I enjoy reading, getting lost in a good story-driven RPG, and occasionally bouldering. I'm also fascinated by history and ancient civilisations."
   ]
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     title: "ImageFlow",
     url: "https://github.com/ammarqd/imageflow-app",
     image: "/images/imageflow-app.png",
-    description: "Distributed, asynchronous image processing application using OpenCV and the YuNet model for AI-assisted smart cropping of batch image uploads, with results displayed in a gallery view.",
+    description: "A distributed, asynchronous image processing application handling batch uploads. Utilises OpenCV and the YuNet model for AI-assisted smart cropping, with results displayed in a gallery view.",
     technologies: ["FastAPI", "Postgres", "Redis", "Celery", "React"]
   },
   {
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     url: "https://github.com/ammarqd/cool-compiler",
     image: "/images/cool-compiler.png",
     description:
-      "Compiler for the Cool programming language using the Visitor-pattern for AST traversal. Coded in Java and utilising ANTLR4 for parse tree generation, with full test coverage for each compiler phase.",
+      "Compiler for the Cool programming language, coded in Java and using ANTLR4 for parse tree generation. Utilises the Visitor-pattern for AST traversal, with full test coverage for each compiler phase.",
     technologies: ["Java", "ANTLR4"]
   },
   {
@@ -83,6 +83,6 @@ export const projects: Project[] = [
     image: "/images/weather-app.jpg",
     description:
       "React app with a stylish GUI and weather information obtained via an external API. Designed for tourists, it has clothing and accessory recommendations based on the weather.",
-    technologies: ["HTML", "CSS", "JavaScript", "React"]
+    technologies: ["React", "JavaScript", "HTML", "CSS"]
   },
 ]
