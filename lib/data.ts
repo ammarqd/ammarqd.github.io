@@ -50,14 +50,14 @@ export const projects: Project[] = [
     title: "Event-Driven Payment Ledger",
     url: "https://github.com/ammarqd/event-driven-payment-ledger",
     image: "/images/event-driven-payment-ledger.png",
-    description: "Event-driven payment ledger built to handle high-concurrency transactions safely using double-entry bookkeeping, strict idempotency keys, and pessimistic row locking.",
+    description: "Engineered to handle high-concurrency transactions safely using double-entry bookkeeping, strict idempotency keys, pessimistic row locking, and the Transactional Outbox pattern.",
     technologies: ["C#", ".NET", "RabbitMQ", "Postgres"]
   },
   {
     title: "ImageFlow",
     url: "https://github.com/ammarqd/imageflow-app",
     image: "/images/imageflow-app.png",
-    description: "A distributed, asynchronous image processing application handling batch uploads. Utilises OpenCV and the YuNet model for AI-assisted smart cropping, with results displayed in a gallery view.",
+    description: "Distributed, asynchronous image processing application handling batch uploads. Utilises OpenCV and the YuNet model for AI-assisted smart cropping, with results displayed in a gallery view.",
     technologies: ["FastAPI", "Celery", "Redis", "React"]
   },
   {
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     url: "https://github.com/ammarqd/cool-compiler",
     image: "/images/cool-compiler.png",
     description:
-      "Compiler for the Cool programming language, coded in Java and using ANTLR4 for parse tree generation. Utilises the Visitor-pattern for AST traversal, with full test coverage for each compiler phase.",
+      "Compiler for the Cool programming language built with ANTLR4 for parse tree generation. Utilises the Visitor-pattern for AST traversal, with full test coverage for each compiler phase.",
     technologies: ["Java", "ANTLR4"]
   },
   {
