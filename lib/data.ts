@@ -50,22 +50,21 @@ export const projects: Project[] = [
     title: "Event-Driven Payment Ledger",
     url: "https://github.com/ammarqd/event-driven-payment-ledger",
     image: "/images/event-driven-payment-ledger.png",
-    description: "Append-only, double-entry payment ledger built for high-concurrency transactions. Uses idempotency keys for safe payment retries and a transactional outbox for event messaging.",
+    description: "Append-only, double-entry payment ledger built for high-concurrency transactions. Uses idempotency keys for safe payment retries and the transactional outbox pattern for reliable event publishing.",
     technologies: ["C#", ".NET", "RabbitMQ", "Postgres"]
   },
   {
     title: "ImageFlow",
     url: "https://github.com/ammarqd/imageflow-app",
     image: "/images/imageflow-app.png",
-    description: "Distributed batch-processing application for high-volume image workloads. Utilises asynchronous worker queues, applying AI-driven face and saliency detection to generate smart-crops.",
+    description: "Distributed batch-processing application for high-volume image workloads. Processes images asynchronously with AI-driven face and saliency detection to generate smart crops.",
     technologies: ["FastAPI", "Celery", "Redis", "React"]
   },
   {
     title: "Cool Compiler",
     url: "https://github.com/ammarqd/cool-compiler",
     image: "/images/cool-compiler.png",
-    description:
-      "Multi-pass compiler translating Stanford Cool source code into 32-bit MIPS assembly. Uses the Visitor pattern for AST traversal and a stack-accumulator runtime model for code generation.",
+    description: "Multi-pass compiler translating Stanford Cool source code into 32-bit MIPS assembly. Implements the Visitor pattern for AST traversal and a stack-and-accumulator model for code generation.",
     technologies: ["Java", "ANTLR4", "MIPS"]
   },
   {
